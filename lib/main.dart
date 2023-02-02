@@ -123,7 +123,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   createImageLabeling() async {
-    final modelPath = await _getModel('assets/ml/mobilenet.tflite');
+    //PreTrained Model
+    //final modelPath = await _getModel('assets/ml/mobilenet.tflite');
+
+    //Using Trained Model(With the help of Model maker image classification)
+    final modelPath =
+        await _getModel('assets/ml/fruits_efficientnet_lite4.tflite');
+
     final options = LocalLabelerOptions(modelPath: modelPath);
     imageLabeler = ImageLabeler(options: options);
   }
